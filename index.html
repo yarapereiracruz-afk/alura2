@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Visão simples e otimizada do mercado financeiro com gráficos interativos usando p5.js" />
+  <title>Mercado Financeiro — Painel p5.js</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- p5.js CDN (carregar antes do sketch) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Mercado Financeiro</h1>
+      <p class="tagline">Visualização simples e responsiva com p5.js</p>
+    </div>
+  </header>
+
+  <main class="container main-grid">
+    <section class="panel chart-panel" aria-label="Gráfico de preços">
+      <div id="canvas-container" class="canvas-wrap"></div>
+      <div class="controls">
+        <button id="btn-toggle-live" aria-pressed="false">Iniciar simulação</button>
+        <label class="range-label">Zoom:
+          <input id="zoom-range" type="range" min="0.5" max="2" step="0.1" value="1">
+        </label>
+      </div>
+    </section>
+
+    <aside class="panel info-panel" aria-label="Informações">
+      <h2>Resumo</h2>
+      <ul id="stats">
+        <li>Último preço: <strong id="last-price">—</strong></li>
+        <li>Variação (últ. 60s): <strong id="variation">—</strong></li>
+        <li>Pontos exibidos: <strong id="points">—</strong></li>
+      </ul>
+
+      <h3>Interação</h3>
+      <p>Mova o mouse sobre o gráfico para ver tooltip com preço e horário. Use o botão para simular atualização em tempo real.</p>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>Feito com p5.js — Exemplo educativo • &copy; <span id="year"></span></small>
+    </div>
+  </footer>
+
+  <!-- Sketch p5.js -->
+  <script src="sketch.js"></script>
+</body>
+</html>

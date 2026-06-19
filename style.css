@@ -1,0 +1,116 @@
+:root{
+  --bg:#0f1720;
+  --card:#0b1220;
+  --muted:#9aa6b2;
+  --accent:#3ddc84;
+  --glass: rgba(255,255,255,0.03);
+  --max-width:1100px;
+  --radius:12px;
+  --gap:18px;
+  font-size:16px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  background:linear-gradient(180deg,#071021 0%, #071626 100%);
+  color:#e6eef6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  padding-bottom:40px;
+}
+
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:24px;
+}
+
+/* Header */
+.site-header{
+  background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  padding:18px 0;
+  margin-bottom:12px;
+}
+.site-header h1{margin:0;font-size:1.25rem}
+.tagline{margin:4px 0 0;color:var(--muted);font-size:0.95rem}
+
+/* Layout */
+.main-grid{
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap:var(--gap);
+}
+@media (max-width:900px){
+  .main-grid{grid-template-columns:1fr}
+}
+
+/* Panels */
+.panel{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:var(--radius);
+  padding:14px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+  border:1px solid rgba(255,255,255,0.02);
+}
+
+/* Chart container - p5 canvas will fill it */
+.canvas-wrap{
+  width:100%;
+  height:360px;
+  border-radius:8px;
+  overflow:hidden;
+  background:var(--glass);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Controls */
+.controls{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:10px;
+  flex-wrap:wrap;
+}
+button{
+  background:linear-gradient(180deg,var(--accent),#13a763);
+  border:none;
+  color:#042016;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+}
+.range-label{color:var(--muted);font-size:0.95rem}
+input[type=range]{vertical-align:middle}
+
+/* Info panel */
+.info-panel h2{margin-top:0}
+#stats{padding-left:16px;color:var(--muted)}
+#stats li{margin:8px 0}
+
+/* Footer */
+.site-footer{
+  margin-top:20px;
+  color:var(--muted);
+  text-align:center;
+}
+
+/* Tooltip styles inserted by p5 (if any) can be styled here */
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(2,6,23,0.9);
+  color: #dbeef3;
+  padding:8px 10px;
+  border-radius:6px;
+  font-size:0.9rem;
+  border:1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+}
